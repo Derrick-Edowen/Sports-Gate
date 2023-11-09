@@ -24,7 +24,7 @@ const Hockey = () => {
           const response = await axios.get('https://livescore6.p.rapidapi.com/matches/v2/list-by-date', {
             params: {
               Category: 'hockey',
-              Date: currentDateYYYYMMDD,
+              Date: 20231108,
               Timezone: '-7'
             },
             headers: {
@@ -54,8 +54,32 @@ const Hockey = () => {
           <h2>{apiData.Stages[0].Cnm}</h2>
           <h3>{apiData.Stages[0].Snm}</h3>
           <div class="row">
-          <h2 class="col-sm-6">{apiData.Stages[0].Events[0].T1[0].Nm}</h2>
-          <h2 class="col-sm-6">{apiData.Stages[0].Events[0].T2[0].Nm}</h2>
+          <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T1[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> First Quarter: {apiData.Stages[0].Events[0].Tr1Pe1} </h3>
+          <h3> Second Quarter:{apiData.Stages[0].Events[0].Tr1Pe2} </h3>
+          <h3> Third Quarter:{apiData.Stages[0].Events[0].Tr1Pe3} </h3>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr1} </h3>
+          </div>
+          <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T2[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> First Quarter:{apiData.Stages[0].Events[0].Tr2Pe1} </h3>
+          <h3> Second Quarter:{apiData.Stages[0].Events[0].Tr2Pe2} </h3>
+          <h3> Third Quarter:{apiData.Stages[0].Events[0].Tr2Pe3} </h3>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr2} </h3>
+          </div>
+          <div class="col-sm-12">
+          {apiData.Stages[0].Events[0].Tr1 > apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>{apiData.Stages[0].Events[0].T1[0].Nm} Won!</h3>
+              ) : apiData.Stages[0].Events[0].Tr1 === apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>It's a Draw!</h3>
+              ) : (
+                <h3>{apiData.Stages[0].Events[0].T2[0].Nm} Won!</h3>
+              )}
+              
+          </div>
           </div>
           </div>
         ) : (

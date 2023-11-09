@@ -30,7 +30,7 @@ const Basketball = () => {
         const response = await axios.get('https://livescore6.p.rapidapi.com/matches/v2/list-by-date', {
           params: {
             Category: 'basketball',
-            Date: currentDateYYYYMMDD,
+            Date: 20231108/*currentDateYYYYMMDD*/,
             Timezone: '-7'
           },
           headers: {
@@ -60,9 +60,35 @@ const Basketball = () => {
         <h2>{apiData.Stages[0].Cnm}</h2>
         <h3>{apiData.Stages[0].Snm}</h3>
         <div class="row">
-        <h3 class="col-sm-6">{apiData.Stages[0].Events[0].T1[0].Nm}</h3>
-        <h3 class="col-sm-6">{apiData.Stages[0].Events[0].T2[0].Nm}</h3>
-        </div>
+        <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T1[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> First Quarter: {apiData.Stages[0].Events[0].Tr1Q1} </h3>
+          <h3> Second Quarter:{apiData.Stages[0].Events[0].Tr1Q2} </h3>
+          <h3> Third Quarter:{apiData.Stages[0].Events[0].Tr1Q3} </h3>
+          <h3> Forth Quarter:{apiData.Stages[0].Events[0].Tr1Q4} </h3>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr1} </h3>
+          </div>
+          <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T2[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> First Quarter:{apiData.Stages[0].Events[0].Tr2Q1} </h3>
+          <h3> Second Quarter:{apiData.Stages[0].Events[0].Tr2Q2} </h3>
+          <h3> Third Quarter:{apiData.Stages[0].Events[0].Tr2Q3} </h3>
+          <h3> Forth Quarter:{apiData.Stages[0].Events[0].Tr2Q4} </h3>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr2} </h3>
+          </div>
+          <div class="col-sm-12">
+          {apiData.Stages[0].Events[0].Tr1 > apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>{apiData.Stages[0].Events[0].T1[0].Nm} Won!</h3>
+              ) : apiData.Stages[0].Events[0].Tr1 === apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>It's a Draw!</h3>
+              ) : (
+                <h3>{apiData.Stages[0].Events[0].T2[0].Nm} Won!</h3>
+              )}
+              
+          </div>
+          </div>
         </div>
       ) : (
         <h3>Loading...</h3>

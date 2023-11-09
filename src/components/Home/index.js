@@ -5,6 +5,16 @@ import './index.scss'
 import backImage from "../../assets/images/sports-modified.webp"
 
 const Home = () => {
+  function getYesterdayExtendedFormat() {
+    const now = new Date();
+    now.setDate(now.getDate() - 1);
+  
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const yesterdayExtendedFormat = now.toLocaleDateString('en-US', options);
+  
+    return yesterdayExtendedFormat;
+  }
+  const yesterdayExtendedFormat = getYesterdayExtendedFormat();
   const [letterClass, setLetterClass] = useState('text-animate')
 
   const nameArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e','','','t','o','','','S','p','o','r','t','s','','G','a','t','e','!']
@@ -26,6 +36,18 @@ const Home = () => {
               idx={10}
             />
           </h1>
+          <div class="row">
+        <p></p>
+        
+        </div>
+        <div class="row">
+        <p></p>
+        
+        </div>
+          <div class="row">
+        <p class="col-sm-12 fade-in">Sport Scores for {yesterdayExtendedFormat}!</p>
+        </div>
+          
         </div>
       </div>
       </div>

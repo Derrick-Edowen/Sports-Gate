@@ -59,9 +59,27 @@ const Soccer = () => {
         <h2>{apiData.Stages[0].Cnm}</h2>
         <h3>{apiData.Stages[0].Snm}</h3>
         <div class="row">
-        <h2 class="col-sm-6">{apiData.Stages[0].Events[0].T1[0].Nm}</h2>
-        <h2 class="col-sm-6">{apiData.Stages[0].Events[0].T2[0].Nm}</h2>
-        </div>
+        <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T1[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr1} </h3>
+          </div>
+          <div class="col-sm-6">
+          <h3> {apiData.Stages[0].Events[0].T2[0].Nm} </h3>
+          <h4>Scoreboard</h4>
+          <h3> Final Score:{apiData.Stages[0].Events[0].Tr2} </h3>
+          </div>
+          <div class="col-sm-12">
+          {apiData.Stages[0].Events[0].Tr1 > apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>{apiData.Stages[0].Events[0].T1[0].Nm} Won!</h3>
+              ) : apiData.Stages[0].Events[0].Tr1 === apiData.Stages[0].Events[0].Tr2 ? (
+                <h3>It's a Draw!</h3>
+              ) : (
+                <h3>{apiData.Stages[0].Events[0].T2[0].Nm} Won!</h3>
+              )}
+              
+          </div>
+          </div>
         </div>
       ) : (
         <h3>Loading...</h3>

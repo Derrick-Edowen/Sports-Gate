@@ -127,4 +127,16 @@
     -webkit-text-stroke: 0.2px #a79090;
 
   }
+  h4 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+    font-family: "Copperplate", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 50px;
+    text-transform: uppercase; /* Optional: Uppercase text */
+    color:#753c3c; /* Adjust the color to your preference */
+    line-height: 1.6; /* Adjust line height for readability */
+    -webkit-text-stroke: 0.2px #a79090;
+
+  }
 }

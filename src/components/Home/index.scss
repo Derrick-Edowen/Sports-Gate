@@ -1,4 +1,31 @@
 
+
+p {
+    
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+  font-family: "Copperplate", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 65px;
+  color:#8a1f1f; /* Adjust the color to your preference */
+  line-height: 1.6; /* Adjust line height for readability */
+  -webkit-text-stroke: 0.1px #dad6d6;
+  text-align: center;
+
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 4.0s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
 .home-page {
 
   .text-zone {
