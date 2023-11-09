@@ -8,9 +8,16 @@
   bottom: auto;
   top: 35px;
 }
+.background-image {
+  background-image: url('../../assets/images/sports-modified.webp'); /* Replace 'your-image.jpg' with the path to your image file */
+  background-size: cover; /* This property ensures the image covers the entire element */
+  background-position: center; /* This centers the image within the element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Set the height as needed*/
 
+}
 .tags {
-  color: #ffd700;
+  color: rgb(192, 75, 7);
   opacity: 0.6;
   position: absolute;
   bottom: 0;
@@ -45,7 +52,7 @@
     h1 {
       font-size: 53px;
       font-family: 'Coolvetica';
-      color: #ffd700;
+      color: rgb(192, 75, 7);
       font-weight: 400;
       margin-top: 0;
       position: relative;
@@ -55,7 +62,7 @@
       &:before {
         content: '<h1>';
         font-family: 'La Belle Aurore', cursive;
-        color: #ffd700;
+        color: rgb(192, 75, 7);
         font-size: 18px;
         position: absolute;
         margin-top: -10px;
@@ -67,7 +74,7 @@
       &:after {
         content: '<h1/>';
         font-family: 'La Belle Aurore', cursive;
-        color: #ffd700;
+        color: rgb(192, 75, 7);
         font-size: 18px;
         line-height: 18px;
         position: absolute;

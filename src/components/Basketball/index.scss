@@ -9,7 +9,14 @@
   overflow: hidden;
 }
 
+.bask-image {
+  background-image: url('../../assets/images/bask-modified.jpg'); /* Replace 'your-image.jpg' with the path to your image file */
+  background-size: cover; /* This property ensures the image covers the entire element */
+  background-position: center; /* This centers the image within the element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Set the height as needed*/
 
+}
 .cubespinner {
   animation-name: spincube;
   animation-timing-function: ease-in-out;
@@ -84,4 +91,40 @@
   text-align: center;
   left: auto;
   top: 250px;
+  h1 {
+    
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+    font-family: "Copperplate", sans-serif;
+    font-size: 65px;
+    font-weight: 1000;
+    line-height: 65px;
+    text-transform: uppercase; /* Optional: Uppercase text */
+    color:#af2e2e; /* Adjust the color to your preference */
+    line-height: 1.6; /* Adjust line height for readability */
+    -webkit-text-stroke: 0.5px #dad6d6;
+
+  }
+  h2 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+    font-family: "Copperplate", sans-serif;
+    font-size: 35px;
+    font-weight: 850;
+    line-height: 50px;
+    text-transform: uppercase; /* Optional: Uppercase text */
+    color:#753c3c; /* Adjust the color to your preference */
+    line-height: 1.6; /* Adjust line height for readability */
+    -webkit-text-stroke: 0.3px #a79090;
+  }
+  h3 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+    font-family: "Copperplate", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 50px;
+    text-transform: uppercase; /* Optional: Uppercase text */
+    color:#753c3c; /* Adjust the color to your preference */
+    line-height: 1.6; /* Adjust line height for readability */
+    -webkit-text-stroke: 0.2px #a79090;
+
+  }
 }

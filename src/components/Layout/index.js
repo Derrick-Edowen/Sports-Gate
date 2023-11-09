@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../Sidebar/'
 import './index.scss'
+import backImage from "../../assets/images/sports-modified.webp"
+
 
 const Layout = () => {
   return (

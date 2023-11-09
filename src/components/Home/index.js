@@ -7,7 +7,7 @@ import backImage from "../../assets/images/sports-modified.webp"
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
-  const nameArray = ['','W', 'e', 'l', 'c', 'o', 'm', 'e','','t','o','','S','p','o','r','t','s','','G','a','t','e','!']
+  const nameArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e','','','t','o','','','S','p','o','r','t','s','','G','a','t','e','!']
 
   useEffect(() => {
     return setTimeout(() => {
@@ -23,7 +23,7 @@ const Home = () => {
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
-              idx={12}
+              idx={10}
             />
           </h1>
         </div>
