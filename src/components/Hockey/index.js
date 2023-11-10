@@ -4,16 +4,18 @@ import axios from 'axios';
 
 const Hockey = () => {
 
-    function getCurrentDateYYYYMMDD() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
+  function getYesterdayYYYYMMDD() {
+    const now = new Date();
+    now.setDate(now.getDate() - 1);
+  
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+  
+    return `${year}${month}${day}`;
+  }
     
-      return `${year}${month}${day}`;
-    }
-    
-    const currentDateYYYYMMDD = getCurrentDateYYYYMMDD();
+    const yesterdayYYYYMMDD = getYesterdayYYYYMMDD();
     
   
     const [apiData, setApiData] = useState(null);
@@ -24,7 +26,7 @@ const Hockey = () => {
           const response = await axios.get('https://livescore6.p.rapidapi.com/matches/v2/list-by-date', {
             params: {
               Category: 'hockey',
-              Date: 20231108,
+              Date: yesterdayYYYYMMDD,
               Timezone: '-7'
             },
             headers: {

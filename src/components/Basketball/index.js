@@ -5,21 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import baskImage from "../../assets/images/bask-modified.jpg"
 
 
-
-
-
 const Basketball = () => {
 
-  function getCurrentDateYYYYMMDD() {
+  function getYesterdayYYYYMMDD() {
     const now = new Date();
+    now.setDate(now.getDate() - 1);
+  
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
   
     return `${year}${month}${day}`;
   }
-  
-  const currentDateYYYYMMDD = getCurrentDateYYYYMMDD();
+    
+    const yesterdayYYYYMMDD = getYesterdayYYYYMMDD();
   
 
   const [apiData, setApiData] = useState(null);
@@ -30,7 +29,7 @@ const Basketball = () => {
         const response = await axios.get('https://livescore6.p.rapidapi.com/matches/v2/list-by-date', {
           params: {
             Category: 'basketball',
-            Date: 20231108/*currentDateYYYYMMDD*/,
+            Date: yesterdayYYYYMMDD,
             Timezone: '-7'
           },
           headers: {
